@@ -1,0 +1,228 @@
+@use "../../../public/mixins";
+
+$font-size: 20px;
+
+.modal__container {
+    position: absolute;
+    margin-top: 64px;
+    height: calc(100% - 64px);
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+#login__container {
+    height: 100vh;
+    @include mixins.flex-mixin($justify: center, $direction: column);
+}
+
+@media screen and (min-width: 600px) {
+    .form__content {
+        max-width: 340px;
+    }
+    
+    #form__container {
+        font-family: sans-serif;
+        color: #161D30;
+        @include mixins.flex-mixin($justify: center, $direction: column);
+        .title__wrapper {
+            font-size: $font-size;
+            font-family: sans-serif;
+            text-align: left;
+            h1 {
+                margin: 30px 0;
+                font-style: normal;
+                font-size: 36px;
+                line-height: 120%;
+            }
+        }
+        form {
+            width: 340px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow:  0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .input__wrapper {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                input[type=text], input[type=email] {
+                    font-family: sans-serif;
+                }
+                input {
+                    border: 0;
+                    width: 100%;
+                    padding: 10px 0;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 140%;
+                    border-bottom: 1px solid #D6DBE7;
+                    border: 0;
+                    &::placeholder {
+                        color: #A0A9BE;
+                        font-family: sans-serif;
+                    }
+    
+                    &:focus {
+                        outline: none;
+                        border: 0;
+                        border-bottom: 1px solid #4B7BF5;
+                    }
+                }
+                img {
+                    z-index: 1;
+                    position: absolute;
+                    margin-left: 320px;
+                }
+                border-bottom: 1px solid #D6DBE7;
+            }
+    
+            .form__row {
+                @include mixins.flex-mixin($justify: space-between);
+                line-height: 140%;
+                .rem__password {
+                    @include mixins.flex-mixin($justify: flex-start, $gap: 6px);
+                    font-size: 14px;
+                }
+    
+                #forgotten__password {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    text-decoration: none;
+                    color: #4B7BF5;
+                }
+            }
+    
+            .form__footer {
+                color : #161D30;
+                font-size: 12px;
+                height: 17px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 140%;
+                margin-top: 10px;
+                text-align: center;
+                #user__agreement {
+                    color: #4B7BF5;
+                    cursor: pointer;
+                    margin-left: 2px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 599px) {
+    
+    .form__content {
+        width: 95%;
+    }
+    
+    #form__container {
+        color: #161D30;
+        margin: 0 15px;
+        width: 100%;
+        @include mixins.flex-mixin($justify: center, $direction: column);
+        .title__wrapper {
+            font-size: $font-size;
+            font-family: sans-serif;
+            text-align: left;
+            h1 {
+                margin: 30px 0;
+                font-style: normal;
+                font-size: 30px;
+                line-height: 120%;
+            }
+        }
+        form {
+            box-sizing: border-box;
+            // max-height: 350px;
+            width: 100%;
+            background-color: white;
+            padding: 5px;
+            border-radius: 20px;
+            // box-shadow:  0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .input__wrapper {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                input[type=text], input[type=email] {
+                    font-family: sans-serif;
+                }
+                input {
+                    border: 0;
+                    width: 100%;
+                    padding: 10px 0;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 140%;
+                    border-bottom: 1px solid #D6DBE7;
+                    border: 0;
+                    &::placeholder {
+                        color: #A0A9BE;
+                        font-family: sans-serif;
+                    }
+    
+                    &:focus {
+                        outline: none;
+                        border: 0;
+                        border-bottom: 1px solid #4B7BF5;
+                    }
+                }
+                border-bottom: 1px solid #D6DBE7;
+            }
+    
+            .form__row {
+                @include mixins.flex-mixin($justify: space-between);
+                line-height: 140%;
+                .rem__password {
+                    @include mixins.flex-mixin($justify: flex-start, $gap: 6px);
+                    font-size: 14px;
+                }
+    
+                #forgotten__password {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    text-decoration: none;
+                    color: #4B7BF5;
+                }
+            }
+    
+            .form__footer {
+                color : #161D30;
+                font-size: 12px;
+                height: 17px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 140%;
+                margin-top: 10px;
+                text-align: center;
+                #user__agreement {
+                    color: #4B7BF5;
+                    cursor: pointer;
+                    margin-left: 2px;
+                }
+            }
+            .error__msg{
+                font-size: 13px;
+                text-transform: capitalize;
+            }
+        }
+    }
+}

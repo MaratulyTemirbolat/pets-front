@@ -1,0 +1,54 @@
+.pet__card__list__container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    // background-color: red;
+    .pet__cards__list {
+        width: 100%;
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .pet__card__add__new__link{
+            text-decoration: none;
+            .pet__card__add__new {
+                width: 300px;
+                height: 160px;
+                background-color: white;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                transition: all 0.8s;
+                .pet__card__add__new__circle {
+                    width: 100px;
+                    height: 100px;
+                    background-color: #4B7BF5;
+                    border-radius: 50%;
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 80px;
+                }
+    
+                &:hover {
+                    background-color: #4B7BF5;
+                    .pet__card__add__new__circle {
+                        background-color: white;
+                        color:#4B7BF5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .pet__cards__list {
+        justify-content: center;
+        
+    }
+}
